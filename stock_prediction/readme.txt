@@ -1,38 +1,57 @@
-# Stock Price Prediction with LSTM Neural Network
+Stock Price Prediction with LSTM Neural Network
+This project demonstrates how to build a Long Short-Term Memory (LSTM) neural network to predict future stock prices using historical data from Yahoo Finance.
+We use Pinduoduo Inc. (PDD) as a case study due to its high volatility and relevance during my time working in China.
 
-This project demonstrates how to build a Long Short-Term Memory (LSTM) neural network to predict future stock prices using historical data from Yahoo Finance. 
-Specifically, we use Pinduoduo Inc. (PDD) as a case study due to its high volatility and relevance during my time in China.
+Key Technologies
+Python – Data manipulation and modeling
 
-## Key Technologies
+yFinance – Historical stock data retrieval
 
-- **Python** (Data manipulation and modeling)
-- **yFinance** (Historical stock data retrieval)
-- **Pandas & NumPy** (Data processing)
-- **Matplotlib** (Data visualization)
-- **scikit-learn** (Feature scaling)
-- **TensorFlow / Keras** (Deep learning LSTM model)
+Pandas & NumPy – Data preprocessing and array handling
 
-## Project Workflow
+Matplotlib – Visualization of trends and predictions
 
-1. **Data Retrieval:** Fetch historical closing prices from Yahoo Finance (2012–2025).
-2. **Preprocessing:** Normalize data using MinMaxScaler for LSTM efficiency.
-3. **Sequence Generation:** Use a sliding window of 60 days to predict the next day’s price.
-4. **Model Architecture:**
-   - Three LSTM layers with dropout for regularization.
-   - Final dense layer to output the predicted price.
-5. **Training:** 250 epochs using MSE loss and Adam optimizer.
-6. **Evaluation:** Compare actual vs predicted stock prices visually.
-7. **Forecasting:** Predict the next day’s closing price.
+scikit-learn – Feature scaling using MinMaxScaler
 
-## Outputs
+TensorFlow / Keras – LSTM-based deep learning model
 
-- Trained LSTM model
-- Line plot comparing actual vs. predicted stock prices
-- Next-day closing price forecast
+Project Workflow
+Data Retrieval
+Fetch historical closing prices for PDD from Yahoo Finance (2012–2025).
 
-## Notes
+Preprocessing
+Normalize prices to a [0,1] scale using MinMaxScaler to improve model performance and convergence.
 
-- LSTM was chosen due to its strength in modeling time-series dependencies.
-- 60-day window was selected for balance between short-term trends and noise reduction.
-- MinMaxScaler was used to improve training convergence.
+Sequence Generation
+Create training sequences using a sliding 60-day window to predict the next day's closing price.
 
+Model Architecture
+
+Three LSTM layers with 50 units each
+
+Dropout layers after each LSTM to reduce overfitting
+
+Dense output layer to predict a single value
+
+Training
+Train the model for 250 epochs using the Adam optimizer and mean squared error (MSE) as the loss function.
+
+Evaluation
+Compare the model’s predictions to actual stock prices using visual plots.
+
+Forecasting
+Predict the next day’s closing price based on the most recent 60 days of data.
+
+Outputs
+Trained LSTM model capable of forecasting stock trends
+
+Visualization comparing actual vs. predicted stock prices
+
+Printout of predicted next-day closing price
+
+Notes
+LSTM is well-suited for financial time-series data due to its ability to capture sequential dependencies.
+
+A 60-day lookback window balances short-term signal capture with stability.
+
+This project highlights explainable modeling steps suitable for demonstration, prototyping, or interview preparation.
