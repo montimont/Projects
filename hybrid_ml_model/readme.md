@@ -135,8 +135,6 @@ max_iter = 1062
 solver = 'lbfgs'
 class_weight = 'balanced'
 
-yaml
-Copy code
 
 **Performance:**
 | Metric | Score |
