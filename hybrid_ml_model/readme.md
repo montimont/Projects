@@ -130,3 +130,78 @@ The rule is highly precise for approvals but fails to detect most risky applican
 - Tuned parameters via **RandomizedSearchCV (5-fold Stratified CV)**.
 
 **Best Hyperparameters:**
+C = 2.34
+max_iter = 1062
+solver = 'lbfgs'
+class_weight = 'balanced'
+
+yaml
+Copy code
+
+**Performance:**
+| Metric | Score |
+|---------|--------|
+| Accuracy | 0.62 |
+| Precision (High Risk) | 0.14 |
+| Recall (High Risk) | 0.50 |
+| F1 Score (High Risk) | 0.22 |
+| AUC | 0.60 |
+
+**Key Outcome:**  
+Balanced detection of high-risk applicants without major loss in interpretability.
+
+</details>
+
+---
+
+<details>
+<summary><strong>8. Precision–Recall and Threshold Tuning</strong></summary>
+
+- Evaluated thresholds between 0.05 and 0.90.  
+- At **threshold = 0.50**, recall = 0.50 and precision = 0.14.  
+- Lowering threshold to **≈0.20** increases recall (up to 0.50–0.60) with acceptable precision loss.
+
+**Average Precision (AP):** 0.21  
+→ Indicates limited precision but reasonable trade-off for recall optimization in imbalanced datasets.
+
+</details>
+
+---
+
+<details>
+<summary><strong>9. Feature Importance and Interpretability</strong></summary>
+
+Top coefficients from logistic regression:
+
+| Feature | Coefficient | Impact |
+|----------|--------------|--------|
+| Years_Employed | -2.31 | Lower risk |
+| Housing_type_House / apartment | -1.85 | Lower risk |
+| Type_Income_Working | -1.44 | Lower risk |
+| EDUCATION_Lower secondary | +1.63 | Higher risk |
+| Marital_status_Single / not married | +1.47 | Higher risk |
+| Age | -1.12 | Lower risk |
+
+**Interpretation:**  
+Employment stability, home ownership, and higher education correlate with approval, while youth, lower education, and single status increase rejection risk.
+
+</details>
+
+---
+
+<details>
+<summary><strong>10. Hybrid Decision Framework</strong></summary>
+
+**Logic:**
+1. **Rule A Override:**  
+   - If `Years_Employed < 0.2 (scaled)` → Auto classify as Fraud (High Risk).  
+2. **Logistic Regression:**  
+   - Applied to remaining cases using tuned probability threshold.
+
+**Outputs:**
+- Predicted label (`Fraud` / `Genuine`)  
+- Fraud probability  
+- Decision source (Rule or Model)  
+- Confidence level (High / Moderate)
+
+**Example Output:**
