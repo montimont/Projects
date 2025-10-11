@@ -205,3 +205,91 @@ Employment stability, home ownership, and higher education correlate with approv
 - Confidence level (High / Moderate)
 
 **Example Output:**
+Predicted Label : Fraud
+Fraud Probability : 1.0
+Decision Source : Triggered Rule A (Years_Employed below threshold)
+Model Confidence : High
+
+
+This hybrid logic enhances fairness by combining hard interpretability rules with probabilistic reasoning.
+
+</details>
+
+---
+
+<details>
+<summary><strong>11. Model Serialization and Deployment</strong></summary>
+
+All components saved as a single artifact:
+
+model_artifact = {
+    "scaler": scaler,
+    "logreg_model": best_model,
+    "logreg_model_threshold": 0.50
+}
+joblib.dump(model_artifact, "model.joblib")
+This enables reproducible inference, batch predictions, and portability to production environments.
+
+</details>
+<details> <summary><strong>12. Batch Prediction Utility</strong></summary>
+Implements hybrid_batch_predict(df_input) to process multiple records simultaneously:
+
+Outputs:
+
+Predicted_Label
+
+Fraud_Probability
+
+Decision_Threshold
+
+Decision_Source
+
+Model_Confidence
+
+Example Results:
+
+Predicted_Label	Fraud_Probability	Decision_Source	Confidence
+Fraud	1.0	Rule A	High
+Genuine	0.42	Model	Moderate
+
+</details>
+<details> <summary><strong>13. Tech Stack</strong></summary>
+Python 3.10
+
+pandas, numpy, seaborn, matplotlib
+
+scikit-learn, statsmodels
+
+imbalanced-learn, joblib
+
+Jupyter / Google Colab
+
+</details>
+<details> <summary><strong>14. Project Structure</strong></summary>
+Hybrid_Model_Credit_Risk/
+│
+├── hybrid_model_draft.ipynb # Main analysis notebook
+├── Credit_card.csv # Feature dataset
+├── Credit_card_label.csv # Target labels
+├── model.joblib # Trained model artifact
+├── figures/ # Visual outputs
+│ ├── correlation_heatmap.png
+│ ├── anova_feature_ranking.png
+│ ├── roc_curve.png
+│ ├── pr_curve.png
+│ └── top_features.png
+└── README.md # Documentation (this file)
+
+</details>
+<details> <summary><strong>15. Conclusion</strong></summary>
+This hybrid model demonstrates how combining interpretable domain rules with machine learning significantly enhances performance and fairness in credit risk classification.
+
+Rule A captures long-tenure applicants with high precision.
+
+Logistic Regression complements it with probabilistic reasoning for nuanced cases.
+
+Achieves balance between accuracy (0.62), recall (0.50), and transparency — essential for real-world financial screening.
+
+Future improvements include integrating resampling methods (e.g., SMOTE) or ensemble stacking to further strengthen recall on minority cases.
+
+</details>
