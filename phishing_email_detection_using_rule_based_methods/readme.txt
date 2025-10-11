@@ -107,6 +107,11 @@ To improve reliability, multiple rules were combined using logical aggregation.
 - Moderate accuracy compared to ML classifiers  
 - Limited handling of nuanced phishing language  
 
+**Real-World Application:**  
+In a real-world email security system, this rule-based model could serve as a lightweight pre-filter before machine-learning or NLP-based classification.  
+It provides immediate interpretability and computational efficiency for low-latency threat screening.
+ 
+
 ---
 
 ## Future Work
