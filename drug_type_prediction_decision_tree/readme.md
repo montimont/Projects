@@ -111,11 +111,20 @@ A Random Forest model was trained for performance comparison.
 <summary><strong>6. Model Explainability</strong></summary>
 
 **Decision Tree Visualization:**  
-- Illustrated full tree structure with color-coded branches for each drug class.  
-- Showed hierarchical decision flow from biochemical features to predicted outcomes.
+Illustrates the hierarchical structure of decisions based on patient features.  
+![Decision Tree Diagram](figures/decision_tree_diagram.png)
 
 **Feature Importance Plot:**  
-Highlighted the dominant influence of sodium–potassium ratio and blood pressure on drug classification.
+Shows how sodium–potassium ratio, blood pressure, and age drive predictions.  
+![Feature Importance](figures/feature_importance.png)
+
+**SHAP Interaction Values:**  
+Depicts feature relationships, showing how Na_to_K interacts with BP and Age in predictions.  
+![SHAP Interaction Plot](figures/shap_interaction.png)
+
+**SHAP Summary Plot:**  
+Highlights overall feature contributions to class outputs in the Random Forest model.  
+![SHAP Summary Plot](figures/shap_summary.png)
 
 **VIF Analysis:**  
 Variance Inflation Factors confirmed low multicollinearity among features, supporting the reliability of model coefficients.
@@ -131,10 +140,10 @@ This model simulates a medical decision support tool for early-stage prescriptio
 In practice, such systems can assist healthcare providers by:
 
 - Offering **data-driven guidance** on potential treatment plans.  
-- Identifying **key predictors** of drug suitability (e.g., sodium–potassium balance, patient age).  
+- Identifying **key predictors** of drug suitability (for example, sodium–potassium balance, patient age).  
 - Supporting **pharmacological screening** before more complex analysis or doctor review.
 
-When deployed, it could serve as a **clinical pre-screening layer** that quickly suggests probable drug categories before physician validation — improving efficiency without replacing medical judgment.
+When deployed, it could serve as a **clinical pre-screening layer** that quickly suggests probable drug categories before physician validation, improving efficiency without replacing medical judgment.
 
 </details>
 
@@ -174,6 +183,12 @@ When deployed, it could serve as a **clinical pre-screening layer** that quickly
 <summary><strong>10. Folder Structure</strong></summary>
 
 Drug_Type_Prediction/  
+│  
+├── figures/  
+│   ├── decision_tree_diagram.png  
+│   ├── feature_importance.png  
+│   ├── shap_interaction.png  
+│   └── shap_summary.png  
 │  
 ├── drug_check_decision_tree.ipynb   # Main analysis notebook  
 ├── drug200.csv                      # Dataset  
