@@ -133,8 +133,6 @@ Phishing_Email_Detection_ML/
 ├── model_rf_xgb.joblib # Saved ML models
 └── README.md # Project overview (this file)
 
-yaml
-Copy code
 
 </details>
 
