@@ -1,6 +1,6 @@
 # Data Science & Machine Learning Portfolio
 
-Welcome to my personal project hub — a curated collection of real-world data science, machine learning, and risk modeling projects.
+Welcome to my personal project hub, a curated collection of real-world data science, machine learning, and risk modeling projects.
 
 Each repository demonstrates my approach to solving high-impact analytical problems through a balance of statistical rigor, practical deployment, and domain expertise.  
 Projects span key areas such as credit risk modeling, automation, predictive analytics, time series forecasting, and NLP applications.
@@ -14,7 +14,7 @@ Every project folder is self-contained, with:
 
 ## About Me
 
-I am a Data Scientist with over 5 years of experience in credit risk modeling, fraud detection, and applied machine learning.  
+I am a Data Scientist with over 7 years of experience in credit risk modeling, fraud detection, and applied machine learning.  
 My work focuses on building production-ready risk systems that combine statistical modeling with operational reliability, including fraud alerting, drift detection, threshold tuning, and portfolio optimization.
 
 I have a proven track record of:
@@ -44,12 +44,8 @@ Currently, I am focused on advancing risk analytics for e-commerce and financial
 
 ## Connect
 
-If you would like to discuss a project, collaboration, or opportunity:
-
-- Email: yourname@email.com  
-- LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)  
-- Blog: (optional if you publish articles)  
+- Blog: [Here](https://medium.com/@monbolds) 
 
 ---
 
-"The intersection of interpretability and intelligence — that is where responsible AI lives."
+"The intersection of interpretability and intelligence, that is where responsible AI lives."
