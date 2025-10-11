@@ -131,10 +131,6 @@ Phishing_Email_Detection_ML/
 ├── phishing_ml_classification.ipynb # Main analysis notebook
 ├── phishing_emails.csv # Dataset
 ├── model_rf_xgb.joblib # Saved ML models
-├── /figures/ # Visual outputs
-│ ├── feature_importance.png
-│ ├── model_comparison.png
-│ └── confusion_matrix.png
 └── README.md # Project overview (this file)
 
 yaml
