@@ -1,4 +1,4 @@
-# Credit Risk Monitoring System – Portfolio Project
+# Credit Risk Monitoring System
 
 This project demonstrates a **credit risk monitoring framework** built in Python, focused on tracking the stability and performance of a simplified internal credit score over time.
 
