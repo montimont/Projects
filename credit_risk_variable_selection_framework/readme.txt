@@ -1,60 +1,76 @@
-# End-to-End Credit Scorecard Modeling (Work in Progress)
+# Credit Risk Variable Selection Framework
 
-This project is an end-to-end build of a credit scorecard modeling pipeline designed to replicate industry practices used in credit risk, lending, and model governance.
+This project implements a credit risk variable selection and preparation framework designed to support scorecard development, model governance, and risk analytics workflows.
 
-While still in progress, this repository is structured to eventually support a full model lifecycle — from raw data preparation to feature selection, model development, smoothing, and performance monitoring.
+The framework focuses on the critical stages that occur before model training: data preparation, feature evaluation, variable selection, and smoothing. These processes are essential for building interpretable, stable, and regulator-friendly credit risk models.
 
 ## Purpose
 
-The goal of this project is to simulate a **production-ready scorecard development framework** similar to what’s used in credit underwriting, Basel/CECL-compliant modeling, and risk analytics environments. It emphasizes traceability, interpretability, and modular development practices.
+The goal of this project is to demonstrate industry-standard techniques used to identify, evaluate, and prepare variables for credit scorecard development. The framework emphasizes interpretability, statistical rigor, and reproducible analytical workflows commonly used in lending and risk management environments.
 
-## Current Status
+## Components
 
-[ X ] Feature selection pipeline completed  
-[  ] Variable smoothing and model building in progress  
-[  ] Monitoring, governance documentation, and deployment setup planned
+### 1. Data Preparation
 
-## Folder Structure
+* Stratified development, validation, and holdout sampling
+* Separate datasets for linear and non-linear modeling approaches
+* Missing value handling and feature preparation
+* Infrastructure supporting downstream scorecard development and monitoring
 
-end-to-end-credit-scorecard-modeling/
-│
-├── 01_data_preparation/ # Raw dataset setup and data splits
-├── 02_feature_selection/ # XGBoost, Spearman, Hoeffding D, IV, RF, etc.
-├── 03_variable_smoothing/ # (To be added) Binning, monotonicity checks
-├── 04_model_building/ # (Planned) Logistic regression, score scaling
-├── 05_model_monitoring/ # (Planned) PSI, CSI, performance drift
-│
-├── README.md
+### 2. Feature Selection
+
+Multiple feature evaluation techniques are implemented to assess predictive power, stability, and redundancy:
+
+* XGBoost feature importance
+* Random Forest feature importance
+* Spearman correlation analysis
+* Hoeffding's D dependence testing
+* Logistic regression significance testing
+* Variable clustering
+* Weight of Evidence (WoE) analysis
+* Information Value (IV) analysis
+
+### 3. Variable Smoothing
+
+* Variable binning and grouping
+* Monotonicity enforcement
+* Bad-rate smoothing
+* WoE-ready variable transformation
+* Preparation for interpretable scorecard development
 
 ## Techniques Covered
 
-- Stratified sampling and data partitioning
-- Univariate vs. multivariate feature setup
-- Feature selection using:
-  - XGBoost importance
-  - Spearman correlation
-  - Hoeffding D
-  - Variable clustering (RS ratios)
-  - Logistic regression p-values
-  - Random forest impurity
-  - Weight of Evidence / IV analysis
-- (Planned) Variable smoothing and binning
-- (Planned) Model training, scoring, monitoring, and documentation
+* Stratified sampling and data partitioning
+* Feature engineering and preparation
+* Statistical feature selection
+* Variable clustering and redundancy reduction
+* Weight of Evidence (WoE)
+* Information Value (IV)
+* Monotonic binning and smoothing
+* Credit risk analytics best practices
 
-## Next Steps
+## Folder Structure
 
-- Build out WOE binning and smoothing logic  
-- Develop baseline logistic scorecard  
-- Simulate monitoring reports for PSI/CSI  
-- Package into a modular, repeatable framework
+credit_risk_variable_selection_framework/
+│
+├── 01_data_preparation/
+├── 02_feature_selection/
+├── 03_variable_smoothing/
+│
+└── README.md
 
 ## Target Audience
 
-- Risk analytics professionals
-- Credit modelers and scorecard developers
-- Hiring managers evaluating portfolio quality
-- Anyone interested in production-grade credit model pipelines
+* Credit risk analysts
+* Scorecard developers
+* Quantitative researchers
+* Risk analytics professionals
+* Hiring managers evaluating quantitative modeling portfolios
+
+## Project Objectives
+
+This framework was developed to demonstrate the analytical processes that support interpretable and governance-friendly credit risk modeling. The focus is on variable preparation, statistical evaluation, and model readiness rather than predictive model deployment.
 
 ---
 
-**Note**: This is an evolving project, being updated as time permits. Feature selection is complete and currently under review for model building.
+Built as part of a quantitative risk analytics portfolio showcasing feature selection, variable engineering, and model governance techniques commonly used in credit scoring and lending environments.
