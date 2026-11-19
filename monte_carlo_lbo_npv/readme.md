@@ -4,9 +4,9 @@
 
 ## Overview
 
-We created a Python-based Leveraged Buyout (LBO) model for Enerpac Tool Group utilizing historical financial information obtained from SEC filings. We used **10,000 Monte Carlo simulations** to assess potential investment returns, sponsor net present value (NPV), and acquisition price sensitivity to uncertainty in future operational performance and market conditions.
+I created a Python-based Leveraged Buyout (LBO) model for Enerpac Tool Group utilizing historical financial information obtained from SEC filings. I used **10,000 Monte Carlo simulations** to assess potential investment returns, sponsor net present value (NPV), and acquisition price sensitivity to uncertainty in future operational performance and market conditions.
 
-Our goal was to identify the maximum acquisition valuation that would result in at least a **70% probability of achieving a minimum 20% annualized return**.
+My goal was to identify the maximum acquisition valuation that would result in at least a **70% probability of achieving a minimum 20% annualized return**.
 
 ## Key Findings
 
